@@ -1,18 +1,11 @@
 # Table TH Tool
 
-A simple WordPress plugin that adds table header conversion controls to the block editor.
-
-## Description
-
-Table TH Tool provides an intuitive way to convert table cells between TH (header) and TD (data) elements in WordPress table blocks. Perfect for creating accessible tables with proper semantic structure.
+WordPress plugin to convert table cells between TH and TD elements.
 
 ## Features
 
-- **First Row Headers**: Toggle the entire first row between TH and TD elements
-- **First Column Headers**: Toggle the entire first column between TH and TD elements  
-- **Visual Toggle Controls**: Easy-to-use form toggles in the block sidebar
-- **Semantic HTML**: Promotes proper table structure for accessibility
-- **thead/tbody/tfoot Support**: Works with all table sections
+- First row header toggle
+- First column header toggle
 
 ## Installation
 
@@ -23,13 +16,9 @@ Table TH Tool provides an intuitive way to convert table cells between TH (heade
 
 ## Usage
 
-1. Create or edit a post/page with the block editor
-2. Add a Table block
-3. Select the table block
-4. In the block sidebar, find the "Table Headers" panel
-5. Use the toggles to convert:
-   - **First Row as Header**: Convert the first row to/from header cells
-   - **First Column as Header**: Convert the first column to/from header cells
+1. Add a Table block in the block editor
+2. Select the table block
+3. Use the toggles in the "Table Headers" panel
 
 ## Requirements
 
