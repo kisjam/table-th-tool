@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install and build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Create zip
+        run: |
+          mkdir -p dist/table-th-tool
+          rsync -a --exclude='dist' --exclude='.git' --exclude='.github' \
+            --exclude='node_modules' --exclude='src' --exclude='docker-compose.yml' \
+            --exclude='package.json' --exclude='package-lock.json' \
+            . dist/table-th-tool/
+          cd dist && zip -r ../table-th-tool.zip table-th-tool
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: table-th-tool.zip
+          generate_release_notes: true
