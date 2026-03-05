@@ -4,21 +4,20 @@ WordPress plugin to convert table cells between TH and TD elements.
 
 ## Features
 
-- First row header toggle
-- First column header toggle
+- First row header toggle / 先頭行をTH/TDに切り替え
+- First column header toggle / 先頭列をTH/TDに切り替え
 
 ## Installation
 
 1. Download the plugin files
 2. Upload to your WordPress `/wp-content/plugins/` directory
 3. Activate the plugin through the 'Plugins' menu in WordPress
-4. Start using the controls in the block editor
 
 ## Usage
 
 1. Add a Table block in the block editor
 2. Select the table block
-3. Use the toggles in the "Table Headers" panel
+3. Use the toggles in the "Table Headers" panel in the sidebar
 
 ## Requirements
 
@@ -35,31 +34,36 @@ WordPress plugin to convert table cells between TH and TD elements.
 3. Visit `http://localhost:8082` to access the development site
 4. Activate the plugin and test your changes
 
+```bash
+npm install   # Install dependencies
+npm run build # Build
+npm start     # Watch mode for development
+```
+
 ### File Structure
 
 ```
 table-th-tool/
-├── assets/
-│   └── js/
-│       └── editor.js          # Block editor integration
+├── src/
+│   └── index.js               # Block editor integration (JSX source)
+├── build/                     # Build output (auto-generated)
 ├── table-th-tool.php          # Main plugin file
-├── README.md                   # This file
+├── package.json               # npm config
+├── README.md                  # This file
 └── docker-compose.yml         # Development environment
 ```
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
 ## License
 
-This plugin is licensed under the GPL v2 or later.
+GPL v2 or later
 
 ## Changelog
+
+### 1.1.0
+- Refactored to use @wordpress/scripts build process
+- Migrated to JSX with React hooks
+- Replaced deprecated FormToggle with ToggleControl
+- Removed manual dependency management
 
 ### 1.0.0
 - Initial release

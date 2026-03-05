@@ -1,0 +1,12 @@
+{
+  "name": "table-th-tool",
+  "version": "1.1.0",
+  "description": "WordPress plugin to convert table cells between TH and TD elements",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.0.0"
+  }
+}
