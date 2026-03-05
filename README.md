@@ -1,6 +1,7 @@
 # Table TH Tool
 
 WordPress plugin to convert table cells between TH and TD elements.
+WordPressのテーブルブロックで、先頭行・先頭列のセルをTH/TDに切り替えるプラグインです。
 
 ## Features
 
@@ -24,34 +25,6 @@ WordPress plugin to convert table cells between TH and TD elements.
 - WordPress 5.0 or higher
 - PHP 7.4 or higher
 - Block editor (Gutenberg)
-
-## Development
-
-### Local Development Setup
-
-1. Clone this repository
-2. Run `docker-compose up -d` to start WordPress locally
-3. Visit `http://localhost:8082` to access the development site
-4. Activate the plugin and test your changes
-
-```bash
-npm install   # Install dependencies
-npm run build # Build
-npm start     # Watch mode for development
-```
-
-### File Structure
-
-```
-table-th-tool/
-├── src/
-│   └── index.js               # Block editor integration (JSX source)
-├── build/                     # Build output (auto-generated)
-├── table-th-tool.php          # Main plugin file
-├── package.json               # npm config
-├── README.md                  # This file
-└── docker-compose.yml         # Development environment
-```
 
 ## License
 
