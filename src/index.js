@@ -2,6 +2,7 @@ import { addFilter } from '@wordpress/hooks';
 import { InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { useDispatch } from '@wordpress/data';
+import { __ } from '@wordpress/i18n';
 
 const SECTIONS = ['head', 'body', 'foot'];
 
@@ -104,14 +105,14 @@ function withTableHeaderControls(BlockEdit) {
         return (
             <>
                 <InspectorControls>
-                    <PanelBody title="Table Headers" initialOpen>
+                    <PanelBody title={ __( 'Table Headers', 'table-th-tool' ) } initialOpen>
                         <ToggleControl
-                            label="First Row as Header"
+                            label={ __( 'First Row as Header', 'table-th-tool' ) }
                             checked={isFirstRowHeader(attributes)}
                             onChange={handleFirstRowToggle}
                         />
                         <ToggleControl
-                            label="First Column as Header"
+                            label={ __( 'First Column as Header', 'table-th-tool' ) }
                             checked={isFirstColumnHeader(attributes)}
                             onChange={handleFirstColumnToggle}
                         />

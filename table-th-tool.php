@@ -24,6 +24,18 @@ define('TABLE_TH_TOOL_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('TABLE_TH_TOOL_PLUGIN_DIR', plugin_dir_path(__FILE__));
 
 /**
+ * Load plugin textdomain
+ */
+function table_th_tool_load_textdomain() {
+    load_plugin_textdomain(
+        'table-th-tool',
+        false,
+        dirname( plugin_basename( __FILE__ ) ) . '/languages'
+    );
+}
+add_action( 'init', 'table_th_tool_load_textdomain' );
+
+/**
  * Enqueue block editor assets
  */
 function table_th_tool_enqueue_block_editor_assets() {
@@ -41,6 +53,12 @@ function table_th_tool_enqueue_block_editor_assets() {
         $asset['dependencies'],
         $asset['version'],
         true
+    );
+
+    wp_set_script_translations(
+        'table-th-tool-editor',
+        'table-th-tool',
+        TABLE_TH_TOOL_PLUGIN_DIR . 'languages'
     );
 }
 add_action('enqueue_block_editor_assets', 'table_th_tool_enqueue_block_editor_assets');
