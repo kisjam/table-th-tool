@@ -27,6 +27,10 @@ WordPressのテーブルブロック（表）で、先頭行・先頭列のセ�
 - PHP 7.4 or higher
 - Block editor (Gutenberg)
 
+## Support
+
+If you find this plugin useful, consider buying me a coffee: https://buymeacoffee.com/kisjam
+
 ## License
 
 GPL v2 or later

@@ -26,6 +26,8 @@ Key features:
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Select a table block in the block editor and use the toggles in the "Table Headers" panel in the sidebar
 
+If you find this plugin useful, consider buying me a coffee: https://buymeacoffee.com/kisjam
+
 == Frequently Asked Questions ==
 
 = Which WordPress versions are supported? =
