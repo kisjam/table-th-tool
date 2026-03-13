@@ -4,7 +4,8 @@
   "description": "WordPress plugin to convert table cells between TH and TD elements",
   "scripts": {
     "build": "wp-scripts build",
-    "start": "wp-scripts start"
+    "start": "wp-scripts start",
+    "zip": "npm run build && rm -rf dist table-th-tool.zip && mkdir -p dist/table-th-tool && rsync -a --exclude='dist' --exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='src' --exclude='docker-compose.yml' --exclude='package.json' --exclude='package-lock.json' . dist/table-th-tool/ && cd dist && zip -r ../table-th-tool.zip table-th-tool && cd .. && rm -rf dist && echo 'Created: table-th-tool.zip'"
   },
   "devDependencies": {
     "@wordpress/scripts": "^30.0.0"
