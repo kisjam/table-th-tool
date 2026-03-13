@@ -38,6 +38,13 @@ No configuration needed. Activate the plugin and the controls appear automatical
 
 == Changelog ==
 
+= 1.1.1 =
+* Updated documentation and README
+
+= 1.1.0 =
+* Migrated build environment to @wordpress/scripts
+* Improved code structure with JSX and modern tooling
+
 = 1.0.0 =
 * Initial release
 * First row header toggle
@@ -45,6 +52,12 @@ No configuration needed. Activate the plugin and the controls appear automatical
 * Support for thead/tbody/tfoot sections
 
 == Upgrade Notice ==
+
+= 1.1.1 =
+Documentation update. No functional changes.
+
+= 1.1.0 =
+Refactored build environment. Functionality is unchanged.
 
 = 1.0.0 =
 Initial release.
