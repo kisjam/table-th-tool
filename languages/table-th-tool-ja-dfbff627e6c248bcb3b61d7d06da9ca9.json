@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2024-01-01 00:00+0000",
     "generator": "table-th-tool",
-    "source": "src/index.js",
+    "source": "build/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
