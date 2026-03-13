@@ -28,6 +28,11 @@ Key features:
 
 If you find this plugin useful, consider buying me a coffee: https://buymeacoffee.com/kisjam
 
+== Screenshots ==
+
+1. Toggle controls in the block inspector sidebar — switch first row and first column between TH and TD.
+2. Close-up of the "Table Headers" panel showing both toggle controls.
+
 == Frequently Asked Questions ==
 
 = Which WordPress versions are supported? =
