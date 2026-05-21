@@ -1,8 +1,9 @@
 === Table TH Tool ===
 Contributors: kisjam
 Tags: table, th, td, gutenberg, block-editor
+Donate link: https://buymeacoffee.com/kisjam
 Requires at least: 5.0
-Tested up to: 6.7
+Tested up to: 7.0
 Stable tag: 1.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
@@ -25,8 +26,6 @@ Key features:
 1. Upload the plugin files to the `/wp-content/plugins/table-th-tool` directory
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Select a table block in the block editor and use the toggles in the "Table Headers" panel in the sidebar
-
-If you find this plugin useful, consider buying me a coffee: https://buymeacoffee.com/kisjam
 
 == Screenshots ==
 

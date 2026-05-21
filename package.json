@@ -5,9 +5,17 @@
   "scripts": {
     "build": "wp-scripts build",
     "start": "wp-scripts start",
-    "zip": "npm run build && rm -rf dist table-th-tool.zip && mkdir -p dist/table-th-tool && rsync -a --exclude='dist' --exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='src' --exclude='docker-compose.yml' --exclude='package.json' --exclude='package-lock.json' . dist/table-th-tool/ && cd dist && zip -r ../table-th-tool.zip table-th-tool && cd .. && rm -rf dist && echo 'Created: table-th-tool.zip'"
+    "zip": "npm run build && rm -rf dist table-th-tool.zip && mkdir -p dist/table-th-tool && cp -r index.php table-th-tool.php readme.txt build assets languages dist/table-th-tool/ && cd dist && zip -r ../table-th-tool.zip table-th-tool && cd .. && rm -rf dist && echo 'Created: table-th-tool.zip'",
+    "env:start": "docker info > /dev/null 2>&1 || (open -a Docker && echo 'Docker起動中...' && until docker info > /dev/null 2>&1; do sleep 2; done && echo 'Docker準備完了') && docker-compose up -d && echo '\\nWordPress: http://localhost:8082'",
+    "env:stop": "docker-compose down",
+    "env:reset": "docker-compose down -v && npm run env:start",
+    "plugin-check": "docker exec table-th-tool-wp bash -c 'cd /var/www/html && php wp-cli.phar plugin check table-th-tool --require=./wp-content/plugins/plugin-check/cli.php --allow-root --ignore-codes=outdated_tested_upto_header,hidden_files,ai_instruction_directory,github_directory,compressed_files 2>&1'",
+    "test": "npm run build && npm run plugin-check && playwright test",
+    "test:ui": "npm run build && playwright test --ui",
+    "test:full": "npm run env:start && npm run test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "@wordpress/scripts": "^30.0.0"
   }
 }

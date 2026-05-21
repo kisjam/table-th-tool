@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
   wordpress:
-    image: wordpress:latest
+    image: wordpress:beta-7.0
     container_name: table-th-tool-wp
     restart: always
     ports:
@@ -12,6 +10,9 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_DEBUG_LOG: 1
+      WORDPRESS_DEBUG_DISPLAY: 0
     volumes:
       - ./:/var/www/html/wp-content/plugins/table-th-tool
     depends_on:

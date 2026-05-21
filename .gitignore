@@ -1,3 +1,6 @@
 node_modules/
 build/
 .claude/
+tests/.auth/
+test-results/
+playwright-report/

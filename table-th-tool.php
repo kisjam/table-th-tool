@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Table TH Tool
- * Plugin URI: https://github.com/kisjam/table-th-tool
+ * Plugin URI: https://wordpress.org/plugins/table-th-tool/
  * Description: Simple table header conversion tool for WordPress block editor. Toggle first row and first column between TH and TD elements.
  * Version: 1.1.1
  * Requires at least: 5.0
@@ -22,18 +22,6 @@ if (!defined('ABSPATH')) {
 define('TABLE_TH_TOOL_VERSION', '1.1.1');
 define('TABLE_TH_TOOL_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('TABLE_TH_TOOL_PLUGIN_DIR', plugin_dir_path(__FILE__));
-
-/**
- * Load plugin textdomain
- */
-function table_th_tool_load_textdomain() {
-    load_plugin_textdomain(
-        'table-th-tool',
-        false,
-        dirname( plugin_basename( __FILE__ ) ) . '/languages'
-    );
-}
-add_action( 'init', 'table_th_tool_load_textdomain' );
 
 /**
  * Enqueue block editor assets

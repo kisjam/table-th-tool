@@ -26,14 +26,19 @@ jobs:
       - name: Create zip
         run: |
           mkdir -p dist/table-th-tool
-          rsync -a --exclude='dist' --exclude='.git' --exclude='.github' \
-            --exclude='node_modules' --exclude='src' --exclude='docker-compose.yml' \
-            --exclude='package.json' --exclude='package-lock.json' \
+          rsync -a --exclude-from='.distignore' --exclude='dist' \
             . dist/table-th-tool/
           cd dist && zip -r ../table-th-tool.zip table-th-tool
 
-      - name: Create release
+      - name: Create GitHub release
         uses: softprops/action-gh-release@v2
         with:
           files: table-th-tool.zip
           generate_release_notes: true
+
+      - name: Deploy to WordPress.org SVN
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        env:
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SLUG: table-th-tool
